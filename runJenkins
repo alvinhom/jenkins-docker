@@ -1,0 +1,5 @@
+#!/bin/bash
+docker stop jenkins
+docker rm jenkins
+docker run -d --privileged --restart=always -p 8080:8080 -p 9999:9999 --name jenkins -v /var/run/docker.sock:/var/run/docker.sock -v /data/docker:/var/lib/docker -v /data/jenkins:/var/jenkins_home -v $(which docker):/usr/bin/docker -v /usr/lib64/libdevmapper.so.1.02:/usr/lib/libdevmapper.so.1.02 myjenkins:latest
+echo "Don't forget to run: sudo groupadd docker; sudo usermod -a -G docker jenkins; sudo chown root:docker /var/run/docker.sock"
