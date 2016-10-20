@@ -6,6 +6,7 @@ This requires docker to be running on your host.  This was tested with 1.11.
 
 ## How to use
 * git clone https://github.com/bfarrell/jenkins-docker
+* cd jenkins-docker
 * docker build -t myjenkins .
 * ./runJenkins
 * docker exec -it jenkins bash
