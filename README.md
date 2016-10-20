@@ -5,6 +5,8 @@ Dockerfile and run script for Jenkins which has the ability to spin up sibling c
 This requires docker to be running on your host.  This was tested with 1.11.
 
 ## How to use
+* mkdir -P /data/jenkins
+* chmod -R 777 /data/jenkins   (you can change to more restrictive but jenkins user needs to be able to write to it)
 * git clone https://github.com/bfarrell/jenkins-docker
 * cd jenkins-docker
 * docker build -t myjenkins .
